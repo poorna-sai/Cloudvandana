@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Survey Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+
+	<div class="form-container">
+		<center><h2>Customer Survey Form </h2></center>
+		<form class="form" onsubmit="showPopup(); return false;">
+			<div class="text-main">
+				<div class="input">
+					<label class="label" for="firstname"> First Name</label>
+					<input class="text" type="text" name="firstname" placeholder="Enter First name" required>
+				</div>
+				<div class="input">
+					<label class="label" for="lastname">Last Name</label>
+					<input class="text" type="text" name="lastname" placeholder=" Enter Last name" required>
+				</div>
+			
+			
+				<div class="input">
+				<label class="label" for="email">Email</label>
+				<input type="email" name="email" placeholder="Enter your e-mail" required>
+				</div>
+			</div>
+			
+
+			<div class="text-main">
+				<div class="input">
+					<label class="label" for="country">Country</label>
+					<select class="text" name="country" required>
+					   <option value="">Choose country</option>
+						<option value="India">India</option>
+						<option value="Pakisthan">Pakisthan</option>
+						<option value="Germany">Germany</option>
+						<option value="England">England</option>
+						<option value="Srilanka">Srilanka</option>
+					</select>
+				</div>
+				<div class="input">
+					<label class="label" for="mobilenumber">Mobile Number</label>
+					<input class="text" type="text" name="mobilenumber" placeholder=" Enter your mobile number" required>
+				</div>
+			</div>
+			<div class="text-main">
+				<div class="inputgender">
+					<label class="label" for="gender"> Gender</label>
+					<div class="goptions">
+						<input type="radio" name="gender" value="Male" required><label>Male</label>
+						<input type="radio" name="gender" value="Female"><label>Female</label>
+						<input type="radio" name="gender" value="Other"><label>Other</label>
+					</div>
+				</div>
+				<div class="input">
+					<label class="label" for="profession">Profession</label>
+					<input class="text" type="text" name="profession" placeholder=" Enter Profession" required>
+				</div>
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<div class="pop-container">
+		<div class="pop-window">
+			<table border="3">
+				<tr>
+					
+			<h3>First Name : <span id="fname"></span></h3>
+				</tr>
+				<tr>
+					
+			<h3>Last Name : <span id="lname"></span></h3>
+				</tr>
+				<tr>
+					
+			<h3>Email : <span id="email"></span></h3>
+				</tr>
+				<tr>
+					
+			<h3>Country : <span id="country"></span></h3>
+				</tr>
+				<tr>
+					
+			<h3>Mobile Number : <span id="mno"></span></h3>
+				</tr>
+				<tr>
+					
+			<h3>Gender : <span id="gender"></span></h3>
+				</tr>
+				<tr>
+					
+			<h3>Profession : <span id="prof"></span></h3>
+				</tr>
+			</table>
+			<form>
+			<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+</div>
+<script>
+	function showPopup() {
+		const form = document.querySelector(".form");
+		const popup = document.querySelector(".pop-container");
+		
+		document.getElementById("fname").textContent = form.firstname.value;
+		document.getElementById("lname").textContent = form.lastname.value;
+		document.getElementById("email").textContent = form.email.value;
+		document.getElementById("country").textContent = form.country.value;
+		document.getElementById("mno").textContent = form.mobilenumber.value;
+		document.getElementById("gender").textContent = form.gender.value;
+		document.getElementById("prof").textContent = form.profession.value;
+
+		popup.style.display = "block";
+	}
+</script>
+</body>
+</html>

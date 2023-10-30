@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sample</title>
+</head>
+<body>
+<div class="main-rev" >
+	<h1>Question 1</h1>
+	<h2> Given String </h2>
+	<div id="Given-string">
+
+
+	</div>
+	<h2> Reversed words in a string </h2>
+	<div id="rev-box">	
+	</div>
+</div>
+
+<div class="main-sort">
+	<h1> Question 2</h1>
+	<h2> Elements in array </h2>
+	<div id="Given-array">
+
+
+	</div>
+	<h2> Sorted array  </h2>
+	<div id="Sorted-array">	
+	</div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	let name = window.prompt("Enter the String :-)");
+	document.getElementById("Given-string").textContent = name;
+	let arr = name.split(" ");
+	var revtxt ="";
+	for(var i=0;i<arr.length;i++)
+	{
+		for (var j = arr[i].length - 1; j>= 0; j--) {
+			
+			revtxt+= arr[i][j];
+		}
+		revtxt+=" ";
+	}
+	document.getElementById("rev-box").textContent = revtxt;
+
+// Sorting elements .. there is no time complexity mentioned so i'm going with 
+//bubble sort algorithm :-)
+
+function bubbleSort(arr) {
+    const n = arr.length;
+    let swapped;
+    
+    do {
+        swapped = false;
+        
+        for (let i = 0; i < n - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                const temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+
+    return arr;
+}
+
+const inputString = prompt("Enter a list of integers separated by spaces:-)");
+
+
+const inputArray = inputString.split(" ");
+
+const integerArray = inputArray.map(str => parseInt(str));
+document.getElementById("Given-array").textContent = integerArray;
+const sortedArray = bubbleSort(integerArray);
+document.getElementById("Sorted-array").textContent = sortedArray;
+
+
+
+</script>
+<style type="text/css">
+	
+.main-rev , .main-sort{
+	margin: auto;
+	padding: 8%;
+	width: 50%;
+	background-color: rgb(0,0,0,0.1);
+	box-shadow: 10px 10px 10px 10px rgb(0,0,0,0.4); 
+}
+#rev-box , #Given-string , #Sorted-array , #Given-array{
+	
+	
+	padding: 10px;
+	font-size: 1.3em;
+	border: 5px solid black;
+
+	text-align: center;
+}
+</style>
+</html>

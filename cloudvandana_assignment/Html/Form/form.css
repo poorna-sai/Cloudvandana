@@ -1,0 +1,123 @@
+*{
+	margin: 0;
+	padding: 0%;
+	box-sizing: content-box;
+}
+
+
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	background: linear-gradient(to right , #bdc3c7  , #2c3e50);
+}
+
+.form-container{
+	
+	margin:auto;
+	width: 800px;
+	padding: 4% 5%;
+	text-align: center;
+	align-items: center; 
+	background-color: rgb(58, 91, 240 , 0.8);
+	overflow-x: hidden;
+
+}
+.form{
+	background-color: white;
+	
+	width:80%;
+	margin: auto;
+	border-radius: 2%;
+	text-align: center;
+	padding: 10px 0px;
+
+	box-shadow: 10px 10px 10px 10px rgb(0,0,0,0.7);
+
+}
+.text-main{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 15px 5px;
+
+}
+
+.text{
+	padding:10px ;
+	width: 200px;
+	margin: 20px 10px;	
+}
+.label{
+	
+	font-size: 1.3em;
+	padding-left: 15px;
+	text-align: left;
+
+}
+.input{
+	display: flex;
+	flex-direction: column;
+
+	
+}
+input[type=text]:focus {
+  border: 3px solid black;
+}
+
+input[type=email]{
+	
+	width: 450px;
+	margin: 10px 5px;
+	padding:10px ;	
+}
+@media(max-width: 700px){
+input[type=email]{
+	max-width: 50%;
+	align-self: center;
+	margin: 10px;
+	padding:10px ;
+}	
+
+.label{
+	align-self: center;
+}
+}
+
+
+
+.inputgender{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.goptions{
+	padding: 20px 25px ;
+}
+input[type=submit]
+{
+	padding:10px 20px;
+	color: white;
+	background-color: rgb(58, 91, 240 , 0.9);
+	font-size: 1em;
+}
+
+.pop-container{
+	width : 60%;
+	margin: auto;
+	text-align: center;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+
